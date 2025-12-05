@@ -7,9 +7,8 @@ export async function POST(req) {
     const { messages } = await req.json();
 
     const result = await streamText({
-        model: openai("gpt-4o"),
-        messages
+        model: openai("gpt-5.1"),
+        prompt: "What is a fun thing to do in Petaluma, California?"
     });
-    return result.toAIStreamResponse();
+    return result.toUIMessageStreamResponse();
 }
-
