@@ -8,7 +8,8 @@ export async function POST(req) {
 
     const result = await streamText({
         model: openai("gpt-5.1"),
-        prompt: "What is a fun thing to do in Petaluma, California?"
+        prompt: "What is a fun thing to do in Petaluma, California?",
+        messages
     });
     return result.toUIMessageStreamResponse();
 }
